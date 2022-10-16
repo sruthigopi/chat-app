@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a ><small style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">ChatApp</small></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" routerLink="/">Home</a></li>
+          <!-- <a  ><button class="btn-space  btn btn-success">signup</button></a> -->
+
+          <li><a class="nav-link scrollto" routerLink="signup" >Signup</a></li>
+          <!-- <li><a class="nav-link " href="#">Contact Us</a></li> -->
+         
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          
+           <form class="form-brd" method="POST"  #userForm="ngForm" (ngSubmit)="userVarify()" novalidate >
+            <h3 class="text-center text-info">LOGIN</h3>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"></label>
+              <input type="text"  class="form-control" id="name" name="name" placeholder=" Username" required [(ngModel)]="user.username"
+              #username="ngModel" [class.is-invalid]="username.invalid && username.touched"></div>
+              <div *ngIf="username.errors && (username.invalid || username.touched)">
+                <small class="text-danger" *ngIf="username.errors.required" [class.d-none]="username.valid || username.untouched">Username cannot be empty</small>
+             </div><br>
+          
+            <div class="mb-3">
+              <input type="password"  id="psw" name="psw" class="form-control " placeholder="Password" required [(ngModel)]="user.password"
+              #password="ngModel"  [class.is-invalid]="password.invalid && password.touched" pattern="^[\w\S]{8,16}$">
+            </div>
+            <div *ngIf="password.errors && (password.invalid || password.touched)">
+              <small class="text-danger" *ngIf="password.errors.required" [class.d-none]="password.valid || password.untouched">Password cannot be empty</small>
+              <small class="text-danger" *ngIf="password.errors.pattern" [class.d-none]="password.valid || password.untouched">Password must be minimum 8 characters</small>
+           </div>
+            <br>
+            <div class=" d-grid gap2">
+              <button [disabled]="userForm.form.invalid"  type="submit" class="btn btn-primary">Submit</button>
+            </div><br>
+            <a href=""><h6 class="text-center">Forgotten Password?</h6></a>
+            <hr>
+            <div class="d-grid gap-2 col-4 mx-auto">
+              <a routerLink="signup"><button class="btn btn-colr"  type="button">Create An Account</button></a>
+            </div></form>
+        <!-- </div> -->
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="assets/uploads/chat.gif" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+  
+
+

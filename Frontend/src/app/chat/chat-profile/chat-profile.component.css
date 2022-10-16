@@ -1,0 +1,32 @@
+.card-header{
+    border-radius: 15px 15px 0 0 !important;
+    border-bottom: 0 !important;
+    
+}
+.msg_head{
+    position: relative;
+    }
+    .user_info p{
+        font-size: 10px;
+        color: rgba(255,255,255,0.6);
+        }
+        .user_info{
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 15px;
+            }
+            .user_info span{
+            font-size: 20px;
+            color: white;
+            }      
+         .img_cont{
+                position: relative;
+                height: 70px;
+                width: 70px;
+     }      
+     .user_img{
+        height: 70px;
+        width: 70px;
+        border:1.5px solid #f5f6fa;
+    
+    }

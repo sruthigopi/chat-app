@@ -1,0 +1,27 @@
+<div class="card-header msg_head">
+    <div class="d-flex bd-highlight">
+        <div class="img_cont">
+            
+            <span class="online_icon"></span>
+        </div>
+        <div class="user_info">
+            <span>Forward To....</span>
+           
+        </div>
+       
+        <div id="cntdl" >
+            <br><br>
+
+            <table class="table table-dark" style="width: 300px;"  id="cnt">
+   
+              <tbody>
+                <tr *ngFor="let i of contactsList">
+                  
+                  <td>{{i.name}}</td>
+                  <td style="float: right;"><button ><i class="fas fa-share" (click)="forwardMessage(i)"></i></button></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>  </div>
